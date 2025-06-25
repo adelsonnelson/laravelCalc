@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Subtração</title>
-     @vite(['resources/js/app.js'])
+    <title>Resultado</title>
+    @vite(['resources/js/app.js'])
 </head>
 <body>
     <header>
@@ -18,18 +18,8 @@
         </div>
     </header>
     <div class="container py-4">
-        <form method="POST" action="/calcularSubtracao">
-            @csrf
-            <input type="hidden" name="quantidade" value="{{ $quantidade }}">
-            @for ($i = 1; $i <= $quantidade; $i++)
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Informe o valor:</label>
-                    <input type="number" class="form-control" name="n{{$i}}" id="formGroupExampleInput">
-                </div>
-            @endfor
-            <button type="submit" class="btn btn-sm btn-primary">Enviar</button>
-            <a class="btn btn-sm btn-danger" href="/">Cancelar</a>
-        </form>
+        <p class="h3 py-4 text-center">Total: {{$resultado}}</p>
+        <a class="btn btn-sm btn-danger" href="/">Retorna ao início</a>
     </div>
 </body>
 </html>

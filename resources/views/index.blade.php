@@ -19,40 +19,151 @@
     </header>
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="card mb-4 shadow-sm" style="width: 18rem;">
-              <img class="card-img-top figure-img img-fluid rounded" src="{{asset('storage/imagens/soma.png') }}" alt="Imagem da soma">
+              <img class="card-img-top figure-img img-fluid rounded" src="{{asset('storage/imagem/soma.png') }}" alt="Imagem da soma">
                 <div class="card-body text-center">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSoma">
                       Somar
                     </button>
                 </div>
               </div>
+            </div>
+
+
+            <div class="col-md-3">
+              <div class="card mb-4 shadow-sm" style="width: 18rem;">
+              <img class="card-img-top figure-img img-fluid rounded" src="{{asset('storage/imagem/subtrair.png') }}" alt="Imagem da subtração">
+                <div class="card-body text-center">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSubtracao">
+                      Subtrair
+                    </button>
+                </div>
               </div>
             </div>
+
+
+            <div class="col-md-3">
+              <div class="card mb-4 shadow-sm" style="width: 18rem;">
+              <img class="card-img-top figure-img img-fluid rounded" src="{{asset('storage/imagem/multiplicar.png') }}" alt="Imagem da multiplicação">
+                <div class="card-body text-center">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMultiplicacao">
+                      Multiplicar
+                    </button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-3">
+              <div class="card mb-4 shadow-sm" style="width: 18rem;">
+              <img class="card-img-top figure-img img-fluid rounded" src="{{asset('storage/imagem/dividir.png') }}" alt="Imagem da divisão">
+                <div class="card-body text-center">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDivisao">
+                      Dividir
+                    </button>
+                </div>
+              </div>
+            </div>
+
+            
         </div>
+    </div>
         <!-- Modal -->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Informe a quantidade de números para a operação</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form method="POST" action="/somar">
-          @csrf
-          <input type="number" name="quantidade" min="2">
-          <button type="submit" class="btn btn-sm btn-outline-primary">Enviar</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+    <div class="modal fade" id="modalSoma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Informe a quantidade de números para a operação de Soma</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="/somar">
+              @csrf
+              <input type="number" name="quantidade" min="2">
+              <button type="submit" class="btn btn-sm btn-outline-primary">Enviar</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+
+
+
+    <div class="modal fade" id="modalSubtracao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Informe a quantidade de números para a operação de Subtração</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="/subtrair">
+              @csrf
+              <input type="number" name="quantidade" min="2">
+              <button type="submit" class="btn btn-sm btn-outline-primary">Enviar</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="modalMultiplicacao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Informe a quantidade de números para a operação de Multiplicação</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="/multiplicar">
+              @csrf
+              <input type="number" name="quantidade" min="2">
+              <button type="submit" class="btn btn-sm btn-outline-primary">Enviar</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="modal fade" id="modalDivisao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Informe a quantidade de números para a operação de Divisão</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="/dividir">
+              @csrf
+              <input type="number" name="quantidade" min="2">
+              <button type="submit" class="btn btn-sm btn-outline-primary">Enviar</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
